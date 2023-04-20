@@ -1,18 +1,19 @@
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
 ];
-const ulEl = document.querySelector("#ingredients")
-const fragment = document.createDocumentFragment()
-for (const igrredient of ingredients) {
-  const liEl = document.createElement("li")
-  liEl.textContent = igrredient
-  liEl.classList.add('item')
-  fragment.appendChild(liEl)
-  
-}
-ulEl.appendChild(fragment)
+
+const ul = document.querySelector('#ingredients');
+
+const liElements = ingredients.map(ingredient => {
+  const li = document.createElement('li');
+  li.textContent = ingredient;
+  li.classList.add('item');
+  return li;
+});
+
+ul.append(...liElements);

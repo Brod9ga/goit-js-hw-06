@@ -1,6 +1,14 @@
-const fontSizeControl = document.getElementById("font-size-control");
-const text = document.getElementById("text");
+const fontSizeControl = document.querySelector('#font-size-control');
+const text = document.querySelector('#text');
 
-fontSizeControl.addEventListener("input", () => {
-  text.style.fontSize = `${fontSizeControl.value}px`;
+const defaultFontSize = 56;
+
+// Устанавливаем изначальный размер текста
+text.style.fontSize = `${defaultFontSize}px`;
+fontSizeControl.value = defaultFontSize;
+
+// Добавляем обработчик события input
+fontSizeControl.addEventListener('input', event => {
+  const fontSize = parseInt(event.target.value);
+  text.style.fontSize = `${fontSize}px`;
 });

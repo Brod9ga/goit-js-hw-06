@@ -10,7 +10,7 @@ function getRandomHexColor() {
 
 function changeBackgroundColor() {
   const newColor = getRandomHexColor();
-  widget.style.backgroundColor = newColor;
+  document.body.style.backgroundColor = newColor;
   colorSpan.textContent = newColor;
 }
 
